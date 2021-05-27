@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="wrapper">
+  <button mat-mini-fab color="warn" mat-button [matMenuTriggerFor]="menu">
+  <mat-icon>filter_list</mat-icon>
+</button>
+  <mat-menu #menu="matMenu">
+    <mat-selection-list #shoes role="listbox" [(ngModel)]="selectedOptions" (click)="$event.stopPropagation();"
+      (ngModelChange)="onCheckBoxChanged($event)">
+      <mat-list-option *ngFor="let category of dataList" [value]="category.name">
+        {{category.name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-menu>
+</div>
