@@ -10,7 +10,7 @@ import { saveFilters } from '../store/application.action';
 export class FilterComponent implements OnInit {
   constructor(private store: Store<any>) {} //TODO replace any with model
 
-  selectedOptions: [];
+  selectedOptions: any;
 
   dataList: {
     name: string;
@@ -27,7 +27,7 @@ export class FilterComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.store.select('filter').subscribe(filter => {
+    this.store.select('filter').subscribe((filter: { showFilter: any; }) => {
       this.selectedOptions = filter.showFilter;
     });
   }

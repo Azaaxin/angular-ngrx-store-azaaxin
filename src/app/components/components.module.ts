@@ -4,9 +4,18 @@ import { HeadComponent } from './head/head.component';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { filterReducer } from './store/application.reducer';
+import { MaterialModule } from '../core/material.module';
+import { FormsModule } from '@angular/forms';
 
+const modules = [
+  CommonModule, 
+  FormsModule, 
+  MaterialModule, 
+  StoreModule.forFeature('filter', filterReducer)
+]
 @NgModule({
-  imports: [CommonModule, StoreModule.forFeature('filter', filterReducer)],
-  declarations: [FilterComponent, HeadComponent]
+  imports: modules,
+  declarations: [FilterComponent, HeadComponent],
+  exports: [FilterComponent, HeadComponent]
 })
 export class ComponentsModule {}

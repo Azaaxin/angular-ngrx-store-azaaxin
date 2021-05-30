@@ -9,10 +9,10 @@ import { Store } from '@ngrx/store';
 export class HeadComponent implements OnInit {
   constructor(private store: Store<any>) {} //TODO replace any with model
 
-  selectedOptions: string[];
+  selectedOptions: any;
 
   ngOnInit() {
-    this.store.select('filter').subscribe(filter => {
+    this.store.select('filter').subscribe((filter: { showFilter: any; }) => {
       this.selectedOptions = filter.showFilter;
     });
   }
