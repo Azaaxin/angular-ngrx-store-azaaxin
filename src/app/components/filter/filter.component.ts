@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { saveFilters } from '../store/application.action';
-import { FilterState } from '../store/application.reducer';
 
 @Component({
   selector: 'app-filter',
@@ -10,6 +9,8 @@ import { FilterState } from '../store/application.reducer';
 })
 export class FilterComponent implements OnInit {
   constructor(private store: Store<any>) {}
+
+  selectedOptions: [];
 
   dataList: {
     name: string;
@@ -24,7 +25,6 @@ export class FilterComponent implements OnInit {
       name: 'Area 3'
     }
   ];
-  selectedOptions: [];
 
   ngOnInit(): void {
     this.store.select('filter').subscribe(filter => {
@@ -33,8 +33,7 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  onCheckBoxChanged(e) {
+  onCheckBoxChanged() {
     this.store.dispatch(saveFilters({ savedFilters: this.selectedOptions }));
-    console.log(e);
   }
 }

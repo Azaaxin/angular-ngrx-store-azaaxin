@@ -1,4 +1,4 @@
-import { createAction, createReducer, on, Action } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import { saveFilters } from './application.action';
 
 export interface FilterState {

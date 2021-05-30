@@ -5,7 +5,7 @@
 </button>
   <mat-menu #menu="matMenu">
     <mat-selection-list #shoes role="listbox" [(ngModel)]="selectedOptions" (click)="$event.stopPropagation();"
-      (ngModelChange)="onCheckBoxChanged($event)">
+      (ngModelChange)="onCheckBoxChanged()">
       <mat-list-option *ngFor="let category of dataList" [value]="category.name">
         {{category.name}}
       </mat-list-option>
