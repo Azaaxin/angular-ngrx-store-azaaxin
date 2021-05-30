@@ -29,7 +29,6 @@ export class FilterComponent implements OnInit {
   ngOnInit(): void {
     this.store.select('filter').subscribe(filter => {
       this.selectedOptions = filter.showFilter;
-      console.log(filter.showFilter);
     });
   }
 

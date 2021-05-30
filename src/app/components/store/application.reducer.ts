@@ -8,7 +8,6 @@ export interface FilterState {
 export const filterReducer = createReducer<FilterState>(
   { showFilter: ['Area 2'] }, // TODO: Change this to initialState
   on(saveFilters, (state, action) => {
-    console.warn('Original state: ' + JSON.stringify(state));
     return {
       ...state,
       showFilter: action.savedFilters
