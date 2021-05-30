@@ -45,9 +45,11 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterComponent } from './components/filter/filter.component';
+import { HeadComponent } from './components/head/head.component';
 import { filterReducer } from './components/store/application.reducer';
+
 @NgModule({
-  declarations: [AppComponent, FilterComponent],
+  declarations: [AppComponent, FilterComponent, HeadComponent],
   bootstrap: [AppComponent],
   providers: [
     {
