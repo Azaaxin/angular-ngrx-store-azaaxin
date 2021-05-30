@@ -1,4 +1,4 @@
-import { createReducer, on, Action } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import { saveFilters } from './application.action';
 
 export interface FilterState {
@@ -15,7 +15,3 @@ export const filterReducer = createReducer<FilterState>(
     };
   })
 );
-
-export function reducer(state: FilterState | undefined, action: Action) {
-  return filterReducer(state, action);
-}
