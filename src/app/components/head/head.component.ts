@@ -14,7 +14,6 @@ export class HeadComponent implements OnInit {
   ngOnInit() {
     this.store.select('filter').subscribe(filter => {
       this.selectedOptions = filter.showFilter;
-      console.log(filter.showFilter);
     });
   }
 }
