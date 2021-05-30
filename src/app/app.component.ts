@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'my-app',
@@ -7,4 +6,3 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {}
-
