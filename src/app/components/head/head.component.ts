@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 export class HeadComponent implements OnInit {
   constructor(private store: Store<any>) {}
 
-  selectedOptions: [];
+  selectedOptions: string[];
 
   ngOnInit() {
     this.store.select('filter').subscribe(filter => {

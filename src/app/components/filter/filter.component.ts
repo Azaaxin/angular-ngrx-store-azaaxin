@@ -9,7 +9,6 @@ import { FilterState } from '../store/application.reducer';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-  //listOfcategories = ['Number', 'House', 'Cat'];
   constructor(private store: Store<any>) {}
 
   dataList: {
