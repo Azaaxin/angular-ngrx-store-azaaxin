@@ -8,10 +8,6 @@ import { FilterState } from '../store/application.reducer';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
-export interface Filter {
-  filterArray: string[];
-}
-
 export class FilterComponent implements OnInit {
   //listOfcategories = ['Number', 'House', 'Cat'];
   constructor(private store: Store<any>) {}
@@ -29,15 +25,12 @@ export class FilterComponent implements OnInit {
       name: 'Area 3'
     }
   ];
-  selectedOptions: string[];
+  selectedOptions: [];
 
   ngOnInit(): void {
-    // TODO: Unsubscribe
-    this.store.select('filter').subscribe(selectedOptions => {
-      if (selectedOptions) {
-        this.selectedOptions = selectedOptions.showFilter;
-      }
-      console.log(selectedOptions.showFilter);
+    this.store.select('filter').subscribe(filter => {
+      this.selectedOptions = filter.showFilter;
+      console.log(filter.showFilter);
     });
   }
 

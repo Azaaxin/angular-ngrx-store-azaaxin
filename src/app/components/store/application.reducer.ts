@@ -1,10 +1,5 @@
 import { createAction, createReducer, on, Action } from '@ngrx/store';
-import { Filter } from '../filter/filter.component';
 import { saveFilters } from './application.action';
-
-interface State {
-  jobStatus: Filter;
-}
 
 export interface FilterState {
   showFilter: string[];
@@ -13,14 +8,14 @@ export interface FilterState {
 export const filterReducer = createReducer<FilterState>(
   { showFilter: ['Area 2'] },
   on(saveFilters, (state, action) => {
-    console.log('Original state' + JSON.stringify(state));
+    console.warn('Original state: ' + JSON.stringify(state));
     return {
       ...state,
-      showFilter: state.showFilter
+      showFilter: action.savedFilters
     };
   })
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: FilterState | undefined, action: Action) {
   return filterReducer(state, action);
 }

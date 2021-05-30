@@ -96,7 +96,7 @@ import { filterReducer } from './components/store/application.reducer';
     PortalModule,
     ScrollingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot([filterReducer])
+    StoreModule.forRoot({ filter: filterReducer })
   ]
 })
 export class AppModule {}
