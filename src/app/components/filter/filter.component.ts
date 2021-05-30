@@ -8,7 +8,7 @@ import { saveFilters } from '../store/application.action';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<any>) {} //TODO replace any with model
 
   selectedOptions: [];
 
