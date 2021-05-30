@@ -45,7 +45,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterComponent } from './components/filter/filter.component';
-
+import { filterReducer } from './components/store/application.reducer';
 @NgModule({
   declarations: [AppComponent, FilterComponent],
   bootstrap: [AppComponent],
@@ -96,7 +96,7 @@ import { FilterComponent } from './components/filter/filter.component';
     PortalModule,
     ScrollingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot([])
+    StoreModule.forRoot([filterReducer])
   ]
 })
 export class AppModule {}

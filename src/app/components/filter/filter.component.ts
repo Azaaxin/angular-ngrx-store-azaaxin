@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { saveFilters } from '../store/application.action';
+import { FilterState } from '../store/application.reducer';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
+export interface Filter {
+  filterArray: string[];
+}
+
 export class FilterComponent implements OnInit {
   //listOfcategories = ['Number', 'House', 'Cat'];
   constructor(private store: Store<any>) {}
@@ -31,11 +37,12 @@ export class FilterComponent implements OnInit {
       if (selectedOptions) {
         this.selectedOptions = selectedOptions.showFilter;
       }
+      console.log(selectedOptions.showFilter);
     });
   }
 
   onCheckBoxChanged(e) {
-    this.store.dispatch({ type: '[Changed Filter]' });
+    this.store.dispatch(saveFilters({ savedFilters: this.selectedOptions }));
     console.log(e);
   }
 }
